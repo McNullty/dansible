@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 MAINTAINER mladen.cikara@gmail.com
 
-ENV ANSIBLE_VERSION devel
+ENV ANSIBLE_VERSION stable-2.0
 
 RUN apt-get update && \
     apt-get install -y python-yaml \
@@ -38,6 +38,6 @@ RUN pip install boto
 RUN mkdir /ansible
 WORKDIR /ansible
 
-COPY rc.local /etc
+COPY rc.local /etc/
 
 CMD ["/bin/bash"]
