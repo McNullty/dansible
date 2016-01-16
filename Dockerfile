@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 MAINTAINER mladen.cikara@gmail.com
 
-ENV ANSIBLE_VERSION stable-2.0
+ENV ANSIBLE_VERSION devel
 
 RUN apt-get update && \
     apt-get install -y python-yaml \
