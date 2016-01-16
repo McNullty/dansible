@@ -35,9 +35,9 @@ ENV MANPATH /opt/ansible/docs/man:
 
 RUN pip install boto
 
+COPY rc.local /etc/
+
 RUN mkdir /ansible
 WORKDIR /ansible
-
-COPY rc.local /etc/
 
 CMD ["/bin/bash"]
