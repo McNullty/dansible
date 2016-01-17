@@ -16,12 +16,13 @@ RUN apt-get update && \
        git \
        python-pip \
        sshpass \
-       openssh-client
+       openssh-client \
+       wget
 
 RUN mkdir /etc/ansible/ && \
     cd /etc/ansible/ && \
-    wget https://raw.githubusercontent.com/ansible/ansible/devel/plugins/inventory/ec2.ini && \
-    wget https://raw.githubusercontent.com/ansible/ansible/devel/plugins/inventory/ec2.py && \
+    wget https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/ec2.ini && \
+    wget https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/ec2.py && \
     chmod +x /etc/ansible/ec2.py
 
 
