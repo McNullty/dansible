@@ -2,8 +2,6 @@ FROM ubuntu:latest
 MAINTAINER mladen.cikara@gmail.com
 
 ENV ANSIBLE_VERSION devel
-ENV ANSIBLE_HOSTS /etc/ansible/ec2.py
-ENV EC2_INI_PATH /etc/ansible/ec2.ini
 
 RUN apt-get update && \
     apt-get install -y python-yaml \
@@ -20,11 +18,7 @@ RUN apt-get update && \
        wget
 
 RUN mkdir /etc/ansible/ && \
-    cd /etc/ansible/ && \
-    wget https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/ec2.ini && \
-    wget https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/ec2.py && \
-    chmod +x /etc/ansible/ec2.py
-
+    cd /etc/ansible/
 
 RUN mkdir /opt/ansible/ && \
     git clone -b "$ANSIBLE_VERSION" http://github.com/ansible/ansible.git /opt/ansible/ansible
